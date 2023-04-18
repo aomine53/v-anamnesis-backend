@@ -1,0 +1,35 @@
+server:
+  port: 8000
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  security:
+    user:
+      name: root
+      password: root
+  application:
+    name: PATIENT-SERVICE
+  datasource:
+    password: 12345
+    url: jdbc:postgresql://localhost:5432/DoctorService
+    username: postgres
+  jpa:
+    open-in-view: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  main:
+    allow-circular-references: true

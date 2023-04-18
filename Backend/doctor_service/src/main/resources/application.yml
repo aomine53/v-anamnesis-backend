@@ -1,0 +1,37 @@
+server:
+  port: 8001
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: DOCTOR-SERVICE
+  datasource:
+    password: 12345
+    url: jdbc:postgresql://localhost:5432/DoctorService
+    username: postgres
+  jpa:
+    open-in-view: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+jwt:
+  secret: "KlgH6AzYDeZeGwD288to79I3vTHT8wp7lsdfjlksdjflsdjflsdlfdslfjsdlfdjslfsdjflsjdlfsdlfjsdlfjsdlfjsdlfsdlfjslf"
+
+app:
+  jwttoken:
+    message:  "Jwt token message."
