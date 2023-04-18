@@ -1,5 +1,7 @@
 package com.vanammesis.patientservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 public class Doctor {

@@ -1,12 +1,14 @@
 package com.vanammesis.patientservice.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
 
+@JsonIgnoreProperties("hibernateLazyInitializer")
 @Setter
 @Getter
 @AllArgsConstructor

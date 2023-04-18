@@ -26,6 +26,12 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-netflix-eureka-client
 	// https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
 	implementation 'org.hibernate.orm:hibernate-core:6.1.7.Final'
+// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+// https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-properties
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-properties:2.14.2'
+
 
 	// https://mvnrepository.com/artifact/jakarta.ws.rs/jakarta.ws.rs-api
 	implementation 'jakarta.ws.rs:jakarta.ws.rs-api:2.1.6'
