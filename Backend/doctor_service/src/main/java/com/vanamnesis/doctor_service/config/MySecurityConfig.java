@@ -35,14 +35,15 @@ public class MySecurityConfig {
             "/token",
             "/webjars/**",
             "/api-doctor/doctorSignUp",
-            "/api-doctor/doctorLogin"
+            "/api-doctor/doctorLogin",
     };
 
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable().cors().disable().authorizeHttpRequests()
-                .requestMatchers(PUBLIC_URLS).permitAll()
+                .requestMatchers(PUBLIC_URLS).permitAll().requestMatchers(HttpMethod.GET, "/api-doctor/getDoctor/**", "/api-doctor/getAllDoctors")
+                .permitAll()
                 .anyRequest().authenticated().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .exceptionHandling()

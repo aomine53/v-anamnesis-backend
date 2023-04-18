@@ -18,8 +18,8 @@ spring:
   application:
     name: PATIENT-SERVICE
   datasource:
-    password: 12345
-    url: jdbc:postgresql://localhost:5432/DoctorService
+    password: root
+    url: jdbc:postgresql://localhost:5432/PatientService
     username: postgres
   jpa:
     open-in-view: true
