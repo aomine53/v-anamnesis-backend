@@ -3,13 +3,10 @@ package com.vanammesis.patientservice.controller;
 import com.vanammesis.patientservice.entities.Doctor;
 import com.vanammesis.patientservice.entities.DoctorPatient;
 import com.vanammesis.patientservice.entities.Patient;
-import com.vanammesis.patientservice.external.services.DoctorService;
 import com.vanammesis.patientservice.services.DoctorPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.print.Doc;
 import java.util.List;
 
 @RestController
@@ -25,7 +22,7 @@ public class DoctorPatientController {
     }
 
     @GetMapping("/getAllDoctorsByPatientId/{patientId}")
-    private List<ResponseEntity<Doctor>> getDoctorsByPatient(@PathVariable("patientId") long patientId){
+    private List<Doctor> getDoctorsByPatient(@PathVariable("patientId") long patientId){
         return doctorPatientService.getAllDoctorByPatientId(patientId);
     }
 

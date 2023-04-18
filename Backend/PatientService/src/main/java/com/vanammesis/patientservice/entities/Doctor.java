@@ -1,22 +1,30 @@
 package com.vanammesis.patientservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.SequenceGenerators;
+import lombok.*;
 
 import java.util.List;
 
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Doctor {
 
     private long id;
 
-    private String name;
+    private String doctorName;
 
-    private String email;
+    private String hospitalName;
+    private String doctorEmail;
 
-    private String password;
+    private String doctorPassword;
 
     private String licenseNo;
 
-    private String gender;
+    private String doctorGender;
 
     private List<Patient> patients;
 }

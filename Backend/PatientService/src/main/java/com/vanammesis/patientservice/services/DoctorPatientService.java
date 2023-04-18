@@ -3,15 +3,13 @@ package com.vanammesis.patientservice.services;
 import com.vanammesis.patientservice.entities.Doctor;
 import com.vanammesis.patientservice.entities.DoctorPatient;
 import com.vanammesis.patientservice.entities.Patient;
-import com.vanammesis.patientservice.external.services.DoctorService;
+import com.vanammesis.patientservice.external.services.DoctorServiceImpl;
 import com.vanammesis.patientservice.repository.DoctorPatientRepository;
 import com.vanammesis.patientservice.responses.PatientResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +17,7 @@ import java.util.List;
 public class DoctorPatientService {
 
     @Autowired
-    private DoctorService doctorService;
+    private DoctorServiceImpl doctorService;
 
     @Autowired
     private DoctorPatientRepository doctorPatientRepository;
@@ -29,9 +27,9 @@ public class DoctorPatientService {
 
     @Autowired
     private ModelMapper modelMapper;
-    public List<ResponseEntity<Doctor>> getAllDoctorByPatientId(long patientId){
+    public List<Doctor> getAllDoctorByPatientId(long patientId){
         List<DoctorPatient> allByPatientId = doctorPatientRepository.findAllByPatientId(patientId);
-        List<ResponseEntity<Doctor>> doctorList = new ArrayList<>();
+        List<Doctor> doctorList = new ArrayList<>();
         for(DoctorPatient doctorPatient:  allByPatientId){
             doctorList.add(doctorService.getDoctorById(doctorPatient.getDoctorId()));
         }
