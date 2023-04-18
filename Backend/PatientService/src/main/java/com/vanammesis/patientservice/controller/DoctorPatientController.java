@@ -26,8 +26,9 @@ public class DoctorPatientController {
         return doctorPatientService.getAllDoctorByPatientId(patientId);
     }
 
-    @GetMapping("/getAllPatientByDoctorId/{doctorId}")
+    @GetMapping("/getPatientByDoctorId/{doctorId}")
     private List<Patient> getAllPatientByDoctorId(@PathVariable("doctorId") long doctorId){
         return doctorPatientService.getAllPatientByDoctorId(doctorId);
     }
+
 }

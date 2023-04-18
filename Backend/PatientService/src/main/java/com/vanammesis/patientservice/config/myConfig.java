@@ -1,6 +1,7 @@
 package com.vanammesis.patientservice.config;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +25,12 @@ public class myConfig {
     @Bean
     public RestTemplate restTemplate(){
         return new RestTemplate();
+    }
+
+    @LoadBalanced
+    @Bean
+    public RestTemplateBuilder restTemplateBuilder(){
+        return new RestTemplateBuilder();
     }
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -43,6 +44,8 @@ public class MySecurityConfig  {
 
                 .csrf().disable().cors().disable().authorizeHttpRequests()
                         .requestMatchers(Constants.PUBLIC_URLS).permitAll()
+                .requestMatchers(HttpMethod.GET,"/api-patients/**","/details/id/**","details/patient/**","api-patients/getAllDoctorsByPatientId/**" )
+                .permitAll()
                         .anyRequest().
                 authenticated().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()

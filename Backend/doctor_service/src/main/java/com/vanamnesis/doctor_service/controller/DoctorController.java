@@ -1,6 +1,8 @@
 package com.vanamnesis.doctor_service.controller;
 
 import com.vanamnesis.doctor_service.entity.Doctor;
+import com.vanamnesis.doctor_service.entity.Patient;
+import com.vanamnesis.doctor_service.external.services.PatientService;
 import com.vanamnesis.doctor_service.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,9 @@ import java.util.List;
 public class DoctorController {
     @Autowired
     private DoctorService doctorService;
+
+    @Autowired
+    private PatientService patientService;
 
     @GetMapping("/getDoctorByEmail/{email}")
     public Doctor findDoctorByEmail(@PathVariable String email){
@@ -43,5 +48,11 @@ public class DoctorController {
     public String deleteDoctor(@PathVariable String email){
         return doctorService.deleteDoctor(email);
     }
+
+    @GetMapping("/getPatients/{doctorId}")
+    public List<Patient> getPatients(@PathVariable("doctorId") long doctorId){
+        return patientService.getAllPatientByDoctorId(doctorId);
+    }
+
 
 }

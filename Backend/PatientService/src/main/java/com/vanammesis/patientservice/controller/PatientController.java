@@ -49,10 +49,10 @@ public class PatientController {
         return patientService.saveAllPatients(patients);
     }
 
-//    @GetMapping("/getDoctors")
-//    public List<Doctor> getDoctor(){
-//        return doctorService.getAllDoctors();
-//    }
+    @GetMapping("/getDoctors")
+    public List<Doctor> getDoctor(){
+        return doctorService.getAllDoctors();
+    }
 
     @GetMapping(value ="/getDoctor/{id}",produces={MediaType.APPLICATION_JSON_VALUE})
     public Doctor getDoctorById(@PathVariable("id") long doctorId){
