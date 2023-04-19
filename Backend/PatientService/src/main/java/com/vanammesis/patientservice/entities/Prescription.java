@@ -1,6 +1,5 @@
 package com.vanammesis.patientservice.entities;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,10 +17,12 @@ public class Prescription {
     private long id;
 
     private List<Medication> medication;
-
+    
     private LocalDate date;
 
-    private long patientDoctorId;
+    private long patientId;
+
+    private long doctorId;
 
 }
 

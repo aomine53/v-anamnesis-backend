@@ -42,7 +42,7 @@ public class MySecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable().cors().disable().authorizeHttpRequests()
-                .requestMatchers(PUBLIC_URLS).permitAll().requestMatchers(HttpMethod.GET, "/api-doctor/getDoctor/**", "/api-doctor/getAllDoctors")
+                .requestMatchers(PUBLIC_URLS).permitAll().requestMatchers(HttpMethod.GET, "/api-doctor/getDoctor/**", "/api-doctor/getAllDoctors", "/api-doctor/prescription/byDoctor/**")
                 .permitAll()
                 .anyRequest().authenticated().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()

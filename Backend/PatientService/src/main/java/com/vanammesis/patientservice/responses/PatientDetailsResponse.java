@@ -17,7 +17,7 @@ public class PatientDetailsResponse {
 
     private long patientDetailId;
 
-    private int patientId;
+    private long patientId;
 
     private List<String> patientSymptoms;
 

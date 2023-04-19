@@ -44,7 +44,7 @@ public class MySecurityConfig  {
 
                 .csrf().disable().cors().disable().authorizeHttpRequests()
                         .requestMatchers(Constants.PUBLIC_URLS).permitAll()
-                .requestMatchers(HttpMethod.GET,"/api-patients/**","/details/id/**","details/patient/**","api-patients/getAllDoctorsByPatientId/**" )
+                .requestMatchers(HttpMethod.GET,"/api-patients/**","/details/id/**","details/patient/**","api-patients/getAllDoctorsByPatientId/**","**" ,"/details/new")
                 .permitAll()
                         .anyRequest().
                 authenticated().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

@@ -3,6 +3,7 @@ package com.vanammesis.patientservice.controller;
 import com.vanammesis.patientservice.entities.Doctor;
 import com.vanammesis.patientservice.entities.DoctorPatient;
 import com.vanammesis.patientservice.entities.Patient;
+import com.vanammesis.patientservice.external.services.DoctorServiceImpl;
 import com.vanammesis.patientservice.services.DoctorPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/api-patients")
 public class DoctorPatientController {
+
+    @Autowired
+    private DoctorServiceImpl doctorService;
 
     @Autowired
     private DoctorPatientService doctorPatientService;
@@ -29,6 +33,11 @@ public class DoctorPatientController {
     @GetMapping("/getPatientByDoctorId/{doctorId}")
     private List<Patient> getAllPatientByDoctorId(@PathVariable("doctorId") long doctorId){
         return doctorPatientService.getAllPatientByDoctorId(doctorId);
+    }
+
+    @GetMapping("/getAllDoctors")
+    private List<Doctor> getAllDoctors(){
+        return doctorService.getAllDoctors();
     }
 
 }

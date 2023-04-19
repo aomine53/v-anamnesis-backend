@@ -23,13 +23,13 @@ public class PatientDetails {
     private long patientDetailId;
 
     @Column(name = "patient_id")
-    private String patientId;
+    private long patientId;
 
     @Column(name = "patient_symptoms")
     private List<String> patientSymptoms;
 
     @Column(name = "patient_age")
-    private int patientAge;
+    private long patientAge;
 
     @Column(name = "patient_gender")
     private String patientGender;

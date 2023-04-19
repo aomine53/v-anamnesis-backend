@@ -33,4 +33,14 @@ public class PrescriptionServiceImpl implements PrescriptionService {
     public List<Prescription> getAllPrescriptions() {
         return prescriptionRepsitory.findAll();
     }
+
+    @Override
+    public List<Prescription> getAllPrescriptionsByDoctor(long doctorId) {
+        return prescriptionRepsitory.findAllByDoctorId(doctorId);
+    }
+
+    @Override
+    public List<Prescription> getAllPrescriptionsByPatientId(long patientId) {
+        return prescriptionRepsitory.findAllByPatientId(patientId);
+    }
 }

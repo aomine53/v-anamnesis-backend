@@ -26,7 +26,10 @@ public class Prescription {
     @Column(name = "date")
     private LocalDate date;
 
-    @Column(name = "patient_doctor_id")
-    private long patientDoctorId;
+    @Column(name = "patient_id")
+    private long patientId;
+
+    @Column(name = "doctorId1")
+    private long doctorId;
 
 }

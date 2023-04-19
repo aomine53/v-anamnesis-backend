@@ -1,5 +1,6 @@
 package com.vanammesis.patientservice.controller;
 
+import com.vanammesis.patientservice.entities.PatientDetails;
 import com.vanammesis.patientservice.requests.PatientDetailsRequest;
 import com.vanammesis.patientservice.responses.PatientDetailsResponse;
 import com.vanammesis.patientservice.services.PatientDetailsServiceImpl;
@@ -31,7 +32,7 @@ public class PatientDetailsController {
     }
 
     @GetMapping("/patient/{patientId}")
-    public List<PatientDetailsResponse> getAllPatientDetailsByPatientId(@PathVariable("patientId") long patientId){
-        return patientDetailsService.getPatientDetailsByPatientId(patientId);
+    public PatientDetails getAllPatientDetailsByPatientId(@PathVariable("patientId") long patientId){
+  return patientDetailsService.getPatientDetailsByPatientId(patientId);
     }
 }

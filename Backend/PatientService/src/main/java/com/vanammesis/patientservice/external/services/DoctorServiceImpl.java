@@ -18,9 +18,8 @@ public class DoctorServiceImpl {
         return restTemplate.getForObject("http://localhost:8001/api-doctor/getAllDoctors",  ArrayList.class);
     }
 
-    public Doctor getDoctorById(long doctorId){
-        return restTemplate.getForObject("http://localhost:8001/api-doctor/getDoctor/"+ doctorId, Doctor.class);
+    public Doctor getDoctorById(long doctorId) {
+        return restTemplate.getForObject("http://localhost:8001/api-doctor/getDoctor/" + doctorId, Doctor.class);
     }
-
 
 }

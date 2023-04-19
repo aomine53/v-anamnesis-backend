@@ -1,6 +1,15 @@
 server:
   port: 8999
 
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
 spring:
   application:
     name: API-GATEWAY
@@ -23,11 +32,4 @@ spring:
             - Path=/ticket/**
 
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+

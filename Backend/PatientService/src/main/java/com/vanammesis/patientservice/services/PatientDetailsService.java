@@ -1,6 +1,7 @@
 package com.vanammesis.patientservice.services;
 
 
+import com.vanammesis.patientservice.entities.PatientDetails;
 import com.vanammesis.patientservice.requests.PatientDetailsRequest;
 import com.vanammesis.patientservice.responses.PatientDetailsResponse;
 
@@ -14,7 +15,8 @@ public interface PatientDetailsService {
 
     public PatientDetailsResponse getPatientDetailsById(long patientDetailsId);
 
-    public List<PatientDetailsResponse> getPatientDetailsByPatientId(long patientId);
+    public PatientDetails getPatientDetailsByPatientId(long patientId);
+
 
 
 }

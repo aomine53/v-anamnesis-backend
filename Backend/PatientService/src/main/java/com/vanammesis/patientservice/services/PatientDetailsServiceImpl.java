@@ -45,12 +45,9 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     }
 
     @Override
-    public List<PatientDetailsResponse> getPatientDetailsByPatientId(long patientId) {
-        PatientDetails allByPatientId = patientDetailsRepository.findAllByPatientId(patientId);
-        if(allByPatientId == null){
-            throw new ResourceNotFoundException("No details found for the given patient Id");
-        }
-        return modelMapper.map(allByPatientId,ArrayList.class);
+    public PatientDetails getPatientDetailsByPatientId(long patientId) {
+
+        return patientDetailsRepository.findAllByPatientId(patientId);
     }
 
 

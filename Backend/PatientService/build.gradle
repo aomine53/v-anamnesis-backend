@@ -25,6 +25,8 @@ ext {
 }
 dependencies {
 
+	implementation 'org.springframework.cloud:spring-cloud-starter'
+
 	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-netflix-eureka-client
 	// https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
 	implementation 'org.hibernate.orm:hibernate-core:6.1.7.Final'
@@ -34,9 +36,9 @@ dependencies {
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-properties
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-properties:2.14.2'
 
-
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:3.1.1'
 	// https://mvnrepository.com/artifact/jakarta.ws.rs/jakarta.ws.rs-api
-	implementation 'jakarta.ws.rs:jakarta.ws.rs-api:2.1.6'
+//	implementation 'jakarta.ws.rs:jakarta.ws.rs-api:2.1.6'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools

@@ -20,7 +20,9 @@ public class Prescription {
     
     private LocalDate date;
 
-    private long patientDoctorId;
+    private long patientId;
+
+    private long doctorId;
 
 }
 
