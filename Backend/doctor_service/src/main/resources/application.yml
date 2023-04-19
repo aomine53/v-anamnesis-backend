@@ -15,7 +15,7 @@ spring:
   application:
     name: DOCTOR-SERVICE
   datasource:
-    password: root
+    password: Sam@1910
     url: jdbc:postgresql://localhost:5432/DoctorService
     username: postgres
   jpa:
